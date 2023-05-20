@@ -1,0 +1,26 @@
+def classification_performance(y_test_func, y_pred_func):
+    # Calculate the accuracy of the classifier
+    accuracy = accuracy_score(y_test_func, y_pred_func)
+
+    # Print the confusion matrix for the classifier
+    conf_matrix = confusion_matrix(y_test_func, y_pred_func)
+
+    # calculate precision
+    precision = precision_score(y_test_func, y_pred_func)
+
+    # calculate recall
+    recall = recall_score(y_test_func, y_pred_func)
+
+    # calculate F1 score
+    f1 = f1_score(y_test_func, y_pred_func)
+
+    # calculate ROC AUC score
+    roc_auc = roc_auc_score(y_test_func, y_pred_func)
+
+    # Print the calculated metrics
+    print("Accuracy:", accuracy)
+    print("Confusion Matrix:\n", conf_matrix)
+    print("Precision:", precision)
+    print("Recall:", recall)
+
+    return accuracy, conf_matrix, precision, recall, f1, roc_auc
